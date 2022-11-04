@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tela_principal.dart';
+import 'screem/tela_principal.dart';
 
 void main() {
   runApp(const TripWithIff());
