@@ -53,14 +53,12 @@ class TelaPrincipal extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>  Itens(),
+                        builder: (context) => Itens(),
                       ),
                     );
                   },
                   child: const Text(" → ")),
             ),
-          
-            
           ],
         ),
       ),

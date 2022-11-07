@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'task.dart';
+import '../model/task.dart';
 
 class Itens extends StatefulWidget {
   @override
