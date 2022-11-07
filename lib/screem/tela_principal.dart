@@ -13,20 +13,20 @@ class TelaPrincipal extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(10.0),
               child: Text(
                 "Sua Viagem dos sonhos, comeca aqui!",
                 textAlign: TextAlign.start,
-                overflow: TextOverflow.ellipsis,
+                // overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                    fontSize: 36,
+                    fontSize: 34,
                     fontWeight: FontWeight.bold,
                     color: Colors.amber),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Image.network("Image/viagem.jpg", width: 500, height: 300),
+              child: Image.asset("Image/viagem.jpg", width: 500, height: 300),
             ),
             const Text(
               "Vamos te ajudar a lembrar dos itens de sua viagem!",
