@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trip_with_iff/AppStateNotifier.dart';
 import 'screem/tela_principal.dart';
 
 void main() {
-  runApp(const TripWithIff());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => AppStateNotifier(),
+      ),
+    ],
+    child: TripWithIff(),
+  ));
 }
 
 class TripWithIff extends StatelessWidget {
@@ -10,10 +19,11 @@ class TripWithIff extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<AppStateNotifier>(context).inicializarTheme;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Trip With IFF",
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      theme: Provider.of<AppStateNotifier>(context).theme,
       home: const TelaPrincipal(),
     );
   }
