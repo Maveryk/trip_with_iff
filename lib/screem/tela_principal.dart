@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trip_with_iff/AppStateNotifier.dart';
 import 'itens.dart';
 
 class TelaPrincipal extends StatelessWidget {
@@ -67,27 +69,20 @@ class TelaPrincipal extends StatelessWidget {
   }
 }
 
-class SwitchAppBar extends StatefulWidget {
+class SwitchAppBar extends StatelessWidget {
   const SwitchAppBar({super.key});
-
-  @override
-  State<SwitchAppBar> createState() => _SwitchAppBarState();
-}
-
-class _SwitchAppBarState extends State<SwitchAppBar> {
-  bool light = true;
 
   @override
   Widget build(BuildContext context) {
     return Switch(
       // This bool value toggles the switch.
-      value: light,
+      value: Provider.of<AppStateNotifier>(context).light,
       activeColor: Colors.white,
       onChanged: (bool value) {
         // This is called when the user toggles the switch.
-        setState(() {
-          light = value;
-        });
+
+        Provider.of<AppStateNotifier>(context, listen: false)
+            .updateTheme(value);
       },
     );
   }
